@@ -17,14 +17,17 @@ jobs:
         include:
           - laravel: 9.*
             testbench: ^7.0
+            phpunit: ^9.5
           - laravel: 10.*
             testbench: ^8.0
+            phpunit: ^10.1
           - laravel: 11.*
             testbench: ^9.0
+            phpunit: ^10.1
           - laravel: 12.*
             testbench: ^10.0
+            phpunit: ^11.5
         exclude:
-          # حذف ترکیب‌های ناسازگار
           - laravel: 10.*
             php: 8.0
           - laravel: 11.*
@@ -53,7 +56,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "phpunit/phpunit:${{ matrix.phpunit }}" --no-interaction --no-update --dev
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
