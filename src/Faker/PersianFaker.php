@@ -13,8 +13,18 @@ use RippleDevs\LaravelFaker\Validation\PostalCode as PostalCodeValidation;
 
 class PersianFaker extends Base
 {
+    /**
+     * List of Persian words.
+     *
+     * @var array
+     */
     private static array $words = [];
 
+    /**
+     * List of Persian lorem ipsum texts.
+     *
+     * @var array
+     */
     private static array $lorem = [];
 
     /**
@@ -119,7 +129,7 @@ class PersianFaker extends Base
     }
 
     /**
-     * Generate a valid Iranian IBAN (Shaba).
+     * Generate a valid Iranian IBAN (Sheba).
      *
      * @return string
      */
