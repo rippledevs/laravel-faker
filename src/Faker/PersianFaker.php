@@ -4,10 +4,25 @@ namespace RippleDevs\LaravelFaker\Faker;
 
 use Faker\Provider\Base;
 use RippleDevs\LaravelFaker\Generator\NationalCode;
+use RippleDevs\LaravelFaker\Generator\PostalCode;
 use RippleDevs\LaravelFaker\Generator\Sheba;
+use RippleDevs\LaravelFaker\Validation\PostalCode as PostalCodeValidation;
 
 class PersianFaker extends Base
 {
+    /**
+     * Generate a random Iranian Postal Code.
+     *
+     * @return string
+     */
+    public function postalCode(): string
+    {
+        do {
+            $postalCode = PostalCode::generate();
+        } while (!PostalCodeValidation::check($postalCode));
+        return $postalCode;
+    }
+
     /**
      * Generate a valid Iranian National Code.
      *
