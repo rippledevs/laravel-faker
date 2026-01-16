@@ -62,7 +62,6 @@ $RECYCLE.BIN/
 
 # PHP
 /.phpunit.cache
-/phpunit.xml
 /coverage/
 /.phpunit.result.cache
 
