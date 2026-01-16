@@ -3,7 +3,7 @@
     "description": "An advanced Faker extension for Laravel providing comprehensive Persian (Iran) localization and missing global utilities.",
     "license": "MIT",
     "require": {
-        "php": "^8.0|^8.1|^8.2",
+        "php": "^8.0",
         "fakerphp/faker": "^1.23",
         "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
     },
