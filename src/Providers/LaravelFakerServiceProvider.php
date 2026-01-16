@@ -2,7 +2,9 @@
 
 namespace RippleDevs\LaravelFaker\Providers;
 
+use Faker\Generator;
 use Illuminate\Support\ServiceProvider;
+use RippleDevs\LaravelFaker\Faker\PersianFaker;
 
 class LaravelFakerServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,7 @@ class LaravelFakerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 
     /**
@@ -23,6 +25,8 @@ class LaravelFakerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->resolving(Generator::class, function ($faker) {
+            $faker->addProvider(new PersianFaker($faker));
+        });
     }
 }
