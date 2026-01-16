@@ -26,7 +26,10 @@ class LaravelFakerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->resolving(Generator::class, function ($faker) {
-            $faker->addProvider(new PersianFaker($faker));
+            if (config('app.faker_locale') === 'fa_IR') {
+                $faker->addProvider(new PersianFaker($faker));
+            }
         });
+
     }
 }

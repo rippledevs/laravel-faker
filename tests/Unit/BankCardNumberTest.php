@@ -2,10 +2,10 @@
 
 namespace RippleDevs\LaravelFaker\Tests\Unit;
 
-use RippleDevs\LaravelFaker\Tests\TestCase;
+use RippleDevs\LaravelFaker\Tests\PersianTestCase;
 use RippleDevs\LaravelFaker\Validation\BankCardNumber;
 
-class BankCardNumberTest extends TestCase
+class BankCardNumberTest extends PersianTestCase
 {
     /**
      * @return void

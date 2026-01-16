@@ -2,10 +2,10 @@
 
 namespace RippleDevs\LaravelFaker\Tests\Unit;
 
-use RippleDevs\LaravelFaker\Tests\TestCase;
+use RippleDevs\LaravelFaker\Tests\PersianTestCase;
 use RippleDevs\LaravelFaker\Validation\NationalCode;
 
-class NationalCodeTest extends TestCase
+class NationalCodeTest extends PersianTestCase
 {
     /**
      * @return void

@@ -2,9 +2,10 @@
 
 namespace RippleDevs\LaravelFaker\Tests\Unit;
 
+use RippleDevs\LaravelFaker\Tests\PersianTestCase;
 use RippleDevs\LaravelFaker\Tests\TestCase;
 
-class PersianWordTest extends TestCase
+class PersianWordTest extends PersianTestCase
 {
     /**
      * @return void

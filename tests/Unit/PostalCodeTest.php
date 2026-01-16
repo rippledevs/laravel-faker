@@ -2,12 +2,10 @@
 
 namespace RippleDevs\LaravelFaker\Tests\Unit;
 
-use RippleDevs\LaravelFaker\Tests\TestCase;
-use RippleDevs\LaravelFaker\Validation\NationalCode;
+use RippleDevs\LaravelFaker\Tests\PersianTestCase;
 use RippleDevs\LaravelFaker\Validation\PostalCode;
-use RippleDevs\LaravelFaker\Validation\Sheba;
 
-class PostalCodeTest extends TestCase
+class PostalCodeTest extends PersianTestCase
 {
     /**
      * @return void
