@@ -3,6 +3,7 @@
 namespace RippleDevs\LaravelFaker\Faker;
 
 use Faker\Provider\Base;
+use RippleDevs\LaravelFaker\Generator\BankCardNumber;
 use RippleDevs\LaravelFaker\Generator\NationalCode;
 use RippleDevs\LaravelFaker\Generator\PostalCode;
 use RippleDevs\LaravelFaker\Generator\Sheba;
@@ -10,6 +11,16 @@ use RippleDevs\LaravelFaker\Validation\PostalCode as PostalCodeValidation;
 
 class PersianFaker extends Base
 {
+    /**
+     * Generate a random Iranian Bank Card Number.
+     *
+     * @return string
+     */
+    public function bankCardNumber(): string
+    {
+        return BankCardNumber::generate();
+    }
+
     /**
      * Generate a random Iranian Postal Code.
      *
