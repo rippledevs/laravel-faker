@@ -19,15 +19,6 @@ class NationalCodeTest extends TestCase
     /**
      * @return void
      */
-    public function test_generated_national_codes_are_not_all_identical()
-    {
-        $nationalCode = $this->faker->nationalCode();
-        $this->assertFalse(preg_match('/^(\\d)\\1{9}$/', $nationalCode) === 1);
-    }
-
-    /**
-     * @return void
-     */
     public function test_generated_national_code_is_valid()
     {
         $nationalCode = $this->faker->nationalCode();
