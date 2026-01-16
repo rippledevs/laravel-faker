@@ -64,4 +64,4 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress --ignore-platform-req=php
 
       - name: Execute tests
-        run: vendor/bin/phpunit --display-errors --display-warnings
+        run: vendor/bin/phpunit
