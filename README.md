@@ -1,6 +1,8 @@
 # 🚀 RippleDevs Laravel Faker 
 
+![Latest Version](https://img.shields.io/packagist/v/rippledevs/laravel-faker)
 ![Tests](https://github.com/rippledevs/laravel-faker/workflows/Tests/badge.svg)
+![License](https://img.shields.io/packagist/l/rippledevs/laravel-faker)
 
 An advanced and extensible **Laravel Faker extension** that enhances Laravel’s Faker system with **localized providers**, **regional datasets**, and **missing global utilities**.
 
