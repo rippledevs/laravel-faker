@@ -15,6 +15,53 @@ class PersianFaker extends Base
 {
     private static array $words = [];
 
+    private static array $lorem = [];
+
+    /**
+     * Return a Persian lorem ipsum sentence.
+     *
+     * @return mixed
+     */
+    public function sentence(): mixed
+    {
+        $this->_loadLorem();
+        return self::$lorem["short"];
+    }
+
+    /**
+     * Return a Persian lorem ipsum paragraph.
+     *
+     * @return mixed
+     */
+    public function paragraph(): mixed
+    {
+        $this->_loadLorem();
+        return self::$lorem["long"];
+    }
+
+    /**
+     * Return multiple Persian lorem ipsum paragraphs.
+     *
+     * @param int $nb
+     * @return string
+     */
+    public function paragraphs(int $nb = 3): string
+    {
+        $this->_loadLorem();
+        return implode(PHP_EOL, array_slice(self::$lorem, 0, $nb));
+    }
+
+    /**
+     * Return a Persian lorem ipsum paragraph.
+     *
+     * @return mixed
+     */
+    public function lorem(): mixed
+    {
+        $this->_loadLorem();
+        return self::$lorem["long"];
+    }
+
     /**
      * Generate a random Persian word.
      *
@@ -79,6 +126,16 @@ class PersianFaker extends Base
     public function sheba(): string
     {
         return Sheba::generate();
+    }
+
+    /**
+     * Load persian lorem from the JSON file.
+     *
+     * @return void
+     */
+    private function _loadLorem(): void
+    {
+        self::$lorem = json_decode(file_get_contents(__DIR__ . '/../../resources/lorem.json'), true);
     }
 
     /**
