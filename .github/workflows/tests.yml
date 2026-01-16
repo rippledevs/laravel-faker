@@ -28,12 +28,14 @@ jobs:
             php: 8.0
           - laravel: 11.*
             php: 8.0
+          - laravel: 12.*
+            php: 8.0
           - laravel: 11.*
             php: 8.1
           - laravel: 12.*
-            php: 8.0
-          - laravel: 12.*
             php: 8.1
+          - laravel: 9.*
+            php: 8.3
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
@@ -45,13 +47,13 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, intl, gd
           coverage: none
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --prefer-stable --no-interaction
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
+          composer update --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
         run: vendor/bin/phpunit
